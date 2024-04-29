@@ -38,10 +38,11 @@ export const getHeadConfig: GetHeadConfig<
 };
 
 const Search: Template<TemplateRenderProps> = ({ document }) => {
- 
+  const { _site } = document;
+
   return (
     <LocationsProvider>
-      <PageLayout>
+      <PageLayout _site={_site}>
         <div>
           <Locator verticalKey={"locations"}></Locator>
         </div>
