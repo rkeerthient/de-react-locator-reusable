@@ -175,7 +175,7 @@
 }
 
 .mapPin:hover {
-  color: green; /** Change this for hove color change */
+  color: green; /** Change this for hover color change */
   cursor: pointer;
   height: 2rem;
   width: 2rem;
