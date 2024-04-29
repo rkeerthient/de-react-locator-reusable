@@ -13,6 +13,8 @@ siteStream:
   source: knowledgeGraph
   fields:
     - name
+    - c_header
+    - c_footer
   localization:
     locales:
       - en
