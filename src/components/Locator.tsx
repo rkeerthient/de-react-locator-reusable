@@ -13,8 +13,7 @@ import {
   Pagination,
   ResultsCount,
   SearchBar,
-  StandardFacet,
-  VerticalResults,
+   VerticalResults,
   onSearchFunc,
 } from "@yext/search-ui-react";
 import { LngLat, LngLatBounds } from "mapbox-gl";
@@ -45,14 +44,9 @@ const Locator = ({ verticalKey }: verticalKey) => {
   } = useLocationsContext();
   useEffect(() => {
     if (selectedLocationId) {
-      console.log(selectedLocationId);
-      _setSelectedLocationId(selectedLocationId);
+       _setSelectedLocationId(selectedLocationId);
     }
   }, [selectedLocationId]);
-
-  useEffect(() => {
-    console.log(_selectedLocationId);
-  }, [_selectedLocationId]);
 
   useEffect(() => {
     searchActions.setVertical(verticalKey);

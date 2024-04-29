@@ -22,7 +22,7 @@ export const getHeadConfig: GetHeadConfig<
   TemplateRenderProps
 > = (): HeadConfig => {
   return {
-    title: "Wells Fargo | Search",
+    title: "Locator | Search",
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -38,8 +38,7 @@ export const getHeadConfig: GetHeadConfig<
 };
 
 const Search: Template<TemplateRenderProps> = ({ document }) => {
-  console.log(JSON.stringify(document._site));
-
+ 
   return (
     <LocationsProvider>
       <PageLayout>

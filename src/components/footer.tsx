@@ -4,11 +4,9 @@ const Footer = (_site: Ce_site) => {
   const { c_footer } = _site;
   return (
     <>
-      {c_footer ? (
+      {c_footer && (
         <Image image={c_footer} />
-      ) : (
-        <img src="https://i.imgur.com/lt5WAip.png" alt="" />
-      )}
+      ) }
     </>
   );
 };

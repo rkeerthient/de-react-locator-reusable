@@ -15,13 +15,12 @@ type Props = {
   _site?: Ce_site;
   children?: React.ReactNode;
 };
-// const chatConfig: ChatConfig = {
-//   apiKey: import.meta.env.YEXT_PUBLIC_CHAT_APIKEY,
-//   botId: import.meta.env.YEXT_PUBLIC_CHAT_BOTID,
-// };
+const chatConfig: ChatConfig = {
+  apiKey: import.meta.env.YEXT_PUBLIC_CHAT_APIKEY,
+  botId: import.meta.env.YEXT_PUBLIC_CHAT_BOTID,
+};
 const PageLayout = ({ _site, children }: Props) => {
-  const [showChat, setShowChat] = useState(false);
-
+ 
   return (
     <div className="min-h-screen">
       <Header _site={_site} />
@@ -31,33 +30,33 @@ const PageLayout = ({ _site, children }: Props) => {
         </SearchHeadlessProvider>
       </div>
       <Footer _site={_site}></Footer>
-      {/* <ChatHeadlessProvider config={chatConfig}>
+      <ChatHeadlessProvider config={chatConfig}>
         <ChatPopUp
-          title="LDS Chat"
+          title="Locator Chat"
           stream={false}
           customCssClasses={{
             buttonIcon: "text-white",
-            button: "!bg-none !bg-[#027da5]",
+            button: "chatHeaderAndBotResponseColors",
             panelCssClasses: {
               messageBubbleCssClasses: {
                 message: "text-base",
-                message__user: "!bg-none !bg-[#027da5]",
-                bubble__user: "!bg-none !bg-[#027da5]",
+                message__user: "chatHeaderAndBotResponseColors",
+                bubble__user: "chatHeaderAndBotResponseColors",
               },
 
               inputCssClasses: {
-                sendButton: "!bg-none !bg-[#027da5]",
+                sendButton: "chatHeaderAndBotResponseColors",
                 textArea:
-                  "border border-gray-300 focus:ring-sky-500 focus:border-sky-500 text-base",
+                  "chatTextboxColor",
               },
             },
             headerCssClasses: {
-              container: "!bg-none !bg-[#027da5]",
+              container: "chatHeaderAndBotResponseColors",
               title: "overflow-hidden",
             },
           }}
         />
-      </ChatHeadlessProvider> */}
+      </ChatHeadlessProvider>
     </div>
   );
 };
