@@ -37,6 +37,7 @@
   - _YEXT_PUBLIC_CHAT_APIKEY_: your chat apiKey
   - _YEXT_PUBLIC_CHAT_BOTID_: your chat botId
   - _YEXT_PUBLIC_ACCOUNTTYPE_: PROD (if production) or SBX (if not production)
+  - _YEXT_PUBLIC_VERTICAL_KEY_: your locatios vertical key
 
     ![Search Config](/docImages/search.png)
 
