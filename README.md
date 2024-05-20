@@ -6,7 +6,7 @@
 - **Run the command `rm -rf .git` in your terminal to disconnect the local repository from my repo.**
 - Create a new site entity in your account with two fields:
   - header
-  - hooter
+  - footer
 - In your account create a new entity and upload the header image to header field and footer image to footer field and save it. Copy the newly created entity ID.
 - In the repo, open the `config.yaml` file and replace `entityId` value with this ID. It should be in last line.
 - Push the package to GitHub.
