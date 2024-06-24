@@ -13,7 +13,7 @@ import {
   Pagination,
   ResultsCount,
   SearchBar,
-   VerticalResults,
+  VerticalResults,
   onSearchFunc,
 } from "@yext/search-ui-react";
 import { LngLat, LngLatBounds } from "mapbox-gl";
@@ -44,7 +44,7 @@ const Locator = ({ verticalKey }: verticalKey) => {
   } = useLocationsContext();
   useEffect(() => {
     if (selectedLocationId) {
-       _setSelectedLocationId(selectedLocationId);
+      _setSelectedLocationId(selectedLocationId);
     }
   }, [selectedLocationId]);
 
@@ -110,64 +110,70 @@ const Locator = ({ verticalKey }: verticalKey) => {
             className="flex flex-col w-[40%] p-4 overflow-scroll relative"
             style={{ height: "80vh" }}
           >
-            <div
-              className={`facetsButton ${nr && nr.every((v) => v === true) ? `block` : `hidden`}`}
-              onClick={(e) => setShowFacets(!showFacets)}
-            >
-              Facets & Filters
-            </div>
-            {showFacets ? (
-              <div className="absolute inset-0 bg-white h-[95vh] px-4">
-                <IoIosClose
-                  onClick={(e) => setShowFacets(false)}
-                  className="ml-auto h-8 w-8 mr-4 hover:cursor-pointer hover:border"
-                />
-                <Facets
-                  customCssClasses={{ facetsContainer: "mr-10" }}
-                  searchOnChange={true}
-                />
-                <div className="flex flex-row gap-4 mb-8">
-                  <div className="applyButton" onClick={(e) => setShowFacets(!showFacets)}>
-                    Apply
-                  </div>
-                  <div
-                    className="hover:cursor-pointer px-4 py-1 mt-4 text-[#027da5] w-fit hover:underline"
-                    onClick={(e) => setShowFacets(false)}
-                  >
-                    Cancel
-                  </div>
-                </div>
-              </div>
-            ) : (
+            {import.meta.env.YEXT_PUBLIC_ARE_FACETS_ENABLED === "true" && (
               <>
-                <div>
-                  <ResultsCount />
-                  <AppliedFilters />
-                  {isLoading ? (
-                    <div className="h-screen">
-                      <Loader />
-                    </div>
-                  ) : (
-                    <VerticalResults
-                      CardComponent={LocationCard}
-                      customCssClasses={{
-                        verticalResultsContainer:
-                          "flex flex-col gap-4 bg-white",
-                      }}
-                    />
-                  )}
-                  <div className="mt-4">
-                    <Pagination />
-                    <Geolocation
-                      customCssClasses={{
-                        iconContainer: "none",
-                        geolocationContainer: "flex flex-col lg:flex-col",
-                      }}
-                    />
-                  </div>
+                <div
+                  className={`facetsButton ${nr && nr.every((v) => v === true) ? `block` : `hidden`}`}
+                  onClick={(e) => setShowFacets(!showFacets)}
+                >
+                  Facets & Filters
                 </div>
+                {showFacets && (
+                  <div className="absolute inset-0 bg-white h-[95vh] px-4">
+                    <IoIosClose
+                      onClick={(e) => setShowFacets(false)}
+                      className="ml-auto h-8 w-8 mr-4 hover:cursor-pointer hover:border"
+                    />
+                    <Facets
+                      customCssClasses={{ facetsContainer: "mr-10" }}
+                      searchOnChange={true}
+                    />
+                    <div className="flex flex-row gap-4 mb-8">
+                      <div
+                        className="applyButton"
+                        onClick={(e) => setShowFacets(!showFacets)}
+                      >
+                        Apply
+                      </div>
+                      <div
+                        className="hover:cursor-pointer px-4 py-1 mt-4 text-[#027da5] w-fit hover:underline"
+                        onClick={(e) => setShowFacets(false)}
+                      >
+                        Cancel
+                      </div>
+                    </div>
+                  </div>
+                )}
               </>
             )}
+
+            <>
+              <div>
+                <ResultsCount />
+                <AppliedFilters />
+                {isLoading ? (
+                  <div className="h-screen">
+                    <Loader />
+                  </div>
+                ) : (
+                  <VerticalResults
+                    CardComponent={LocationCard}
+                    customCssClasses={{
+                      verticalResultsContainer: "flex flex-col gap-4 bg-white",
+                    }}
+                  />
+                )}
+                <div className="mt-4">
+                  <Pagination />
+                  <Geolocation
+                    customCssClasses={{
+                      iconContainer: "none",
+                      geolocationContainer: "flex flex-col lg:flex-col",
+                    }}
+                  />
+                </div>
+              </div>
+            </>
           </div>
           <div className=" w-[60%] h-[80vh]">
             <MapboxMap
