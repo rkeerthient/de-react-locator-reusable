@@ -40,8 +40,8 @@ const PageLayout = ({ _site, children }: Props) => {
                 button: "chatHeaderAndBotResponseColors",
                 panelCssClasses: {
                   messageBubbleCssClasses: {
-                    message: "text-base",
-                    message__user: "chatHeaderAndBotResponseColors",
+                    text: "text-base",
+                    text__user: "chatHeaderAndBotResponseColors",
                     bubble__user: "chatHeaderAndBotResponseColors",
                   },
 
