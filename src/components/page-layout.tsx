@@ -20,7 +20,6 @@ const chatConfig: ChatConfig = {
   botId: import.meta.env.YEXT_PUBLIC_CHAT_BOTID,
 };
 const PageLayout = ({ _site, children }: Props) => {
- 
   return (
     <div className="min-h-screen">
       <Header _site={_site} />
@@ -30,33 +29,35 @@ const PageLayout = ({ _site, children }: Props) => {
         </SearchHeadlessProvider>
       </div>
       <Footer _site={_site}></Footer>
-      <ChatHeadlessProvider config={chatConfig}>
-        <ChatPopUp
-          title="Locator Chat"
-          stream={false}
-          customCssClasses={{
-            buttonIcon: "text-white",
-            button: "chatHeaderAndBotResponseColors",
-            panelCssClasses: {
-              messageBubbleCssClasses: {
-                message: "text-base",
-                message__user: "chatHeaderAndBotResponseColors",
-                bubble__user: "chatHeaderAndBotResponseColors",
-              },
+      {import.meta.env.YEXT_PUBLIC_CHAT_APIKEY &&
+        import.meta.env.YEXT_PUBLIC_CHAT_BOTID && (
+          <ChatHeadlessProvider config={chatConfig}>
+            <ChatPopUp
+              title="Locator Chat"
+              stream={false}
+              customCssClasses={{
+                buttonIcon: "text-white",
+                button: "chatHeaderAndBotResponseColors",
+                panelCssClasses: {
+                  messageBubbleCssClasses: {
+                    message: "text-base",
+                    message__user: "chatHeaderAndBotResponseColors",
+                    bubble__user: "chatHeaderAndBotResponseColors",
+                  },
 
-              inputCssClasses: {
-                sendButton: "chatHeaderAndBotResponseColors",
-                textArea:
-                  "chatTextboxColor",
-              },
-            },
-            headerCssClasses: {
-              container: "chatHeaderAndBotResponseColors",
-              title: "overflow-hidden",
-            },
-          }}
-        />
-      </ChatHeadlessProvider>
+                  inputCssClasses: {
+                    sendButton: "chatHeaderAndBotResponseColors",
+                    textArea: "chatTextboxColor",
+                  },
+                },
+                headerCssClasses: {
+                  container: "chatHeaderAndBotResponseColors",
+                  title: "overflow-hidden",
+                },
+              }}
+            />
+          </ChatHeadlessProvider>
+        )}
     </div>
   );
 };
