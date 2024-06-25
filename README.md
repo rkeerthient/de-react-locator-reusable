@@ -25,6 +25,7 @@
 - Clone the repo to your local machine.
 - **Run the command `rm -rf .git` in your terminal to disconnect the local repository from my repo.**
 - In the repo, open the `config.yaml` file and replace `entityId` value with the ID we copied in first section. It should be in last line.
+
   ![Yaml Config](/docImages/yamlconfig.png)
 
 ### Testing it locally
