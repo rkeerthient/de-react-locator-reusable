@@ -13,12 +13,12 @@
     "features": "pages generate features"
   },
   "engines": {
-    "node": "^18.0.0 || >=20.0.0"
+    "node": "^18.20.0 || >=20.2.0"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.0",
     "@heroicons/react": "^2.1.4",
-     "@yext/chat-headless-react": "^0.8.0",
+    "@yext/chat-headless-react": "^0.8.0",
     "@yext/chat-ui-react": "^0.10.2",
     "@yext/components-tsx-geo": "^1.0.3",
     "@yext/pages-components": "1.0.0-rc.11",
@@ -31,12 +31,12 @@
     "mapbox-gl": "^3.4.0",
     "markdown-to-jsx": "^7.4.7",
     "react": "^18.3.1",
-     "react-dom": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-schemaorg": "^2.0.0",
     "react-showdown": "^2.3.1",
-     "schema-dts": "^1.1.2",
-     "tailwind-merge": "^2.3.0"
+    "schema-dts": "^1.1.2",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
