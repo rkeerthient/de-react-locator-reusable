@@ -39,12 +39,14 @@ export const getHeadConfig: GetHeadConfig<
 
 const Search: Template<TemplateRenderProps> = ({ document }) => {
   const { _site } = document;
- 
+  /*test*/
   return (
     <LocationsProvider>
       <PageLayout _site={_site}>
         <div>
-          <Locator verticalKey={import.meta.env.YEXT_PUBLIC_VERTICAL_KEY}></Locator>
+          <Locator
+            verticalKey={import.meta.env.YEXT_PUBLIC_VERTICAL_KEY}
+          ></Locator>
         </div>
       </PageLayout>
     </LocationsProvider>
