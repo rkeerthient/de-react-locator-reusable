@@ -51,7 +51,7 @@
 
 - Click **+Add a site Environment Variable** and add the following mandatory keys. _YEXT_PUBLIC_CHAT_APIKEY_ and _YEXT_PUBLIC_CHAT_BOTID_ keys are **optional**, Add them ONLY IF you want to have chat in locator. Chat keys can be found in path _Chat -> Your Chat -> Integrations(available under Deployment) -> Click Embed Code_ .
   ![Chat Config](/docImages/chat.png)
-
+  ![Search Config](/docImages/search.png)
   - _YEXT_PUBLIC_API_KEY_: Your Search API key
   - _YEXT_PUBLIC_EXP_KEY_: Your search Experience Key
   - _YEXT_PUBLIC_MAP_API_KEY_: (Will be shared in chat)
@@ -61,7 +61,7 @@
   - _YEXT_PUBLIC_ACCOUNTTYPE_: PROD (if production) or SBX (if not production)
   - _YEXT_PUBLIC_VERTICAL_KEY_: your locatios vertical key
 
-    ![Search Config](/docImages/search.png)
+
 
 - Click "Deploy Site" to complete the deployment.
 
