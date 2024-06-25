@@ -8,7 +8,8 @@
   - Seamless navigation 🧭: Clicking a map pin scrolls you to the corresponding card.
   - Interactive map & cards 📍: Hovering over a pin highlights the linked card, and vice versa.
   - Search on the go 🔎: Drag functionality allows for dynamic filtering.
-
+- Toggle between with and without chat experience.
+  - Enter _YEXT_PUBLIC_CHAT_APIKEY_ & _YEXT_PUBLIC_CHAT_BOTID_ to enable chat, else ignore them if want the locator without chat.
 
 ### Prerequisites
 
@@ -31,7 +32,7 @@
 - open the .env file and update the details.
 - These can be found in search config and chat config sections in account.
 - Do a `npm i` followed by `npm run dev`. This will run the file locally to preview.
-- Once we are good with the things, push this to your github.
+- Once we are good with the things, push the package to your github.
 
 ### Deploying to Pages
 
@@ -47,8 +48,7 @@
 
     ![Sites Config](/docImages/sites.png)
 
-- Click **+Add a site Environment Variable** and add the following mandatory keys. Chat keys can be found in path _Chat -> Your Chat -> Integrations(available under Deployment) -> Click Embed Code_
-
+- Click **+Add a site Environment Variable** and add the following mandatory keys. _YEXT_PUBLIC_CHAT_APIKEY_ and _YEXT_PUBLIC_CHAT_BOTID_ keys are **optional**, Add them ONLY IF you want to have chat in locator. Chat keys can be found in path _Chat -> Your Chat -> Integrations(available under Deployment) -> Click Embed Code_ .
   ![Chat Config](/docImages/chat.png)
 
   - _YEXT_PUBLIC_API_KEY_: Your Search API key
